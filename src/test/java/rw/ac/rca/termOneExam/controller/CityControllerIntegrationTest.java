@@ -18,7 +18,16 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-
 public class CityControllerIntegrationTest {
+
+    @Autowired
+    private TestRestTemplate restTemplate;
+
+    @Test
+    public void findById_testSuccess() {
+        ResponseEntity<String> response = restTemplate.getForEntity("/api/cities/id/104", String.class);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
 
 }
