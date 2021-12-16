@@ -47,7 +47,7 @@ public class CityControllerIntegrationTest {
     public void getAll_testSuccess() throws JSONException {
         String response = this.restTemplate.getForObject("/api/cities/all", String.class);
         System.out.println(response);
-        JSONAssert.assertEquals("[{\"id\":101,\"name\":\"Kigali\",\"weather\":24.0,\"fahrenheit\":0.0},{\"id\":102,\"name\":\"Musanze\",\"weather\":18.0,\"fahrenheit\":0.0},{\"id\":103,\"name\":\"Rubavu\",\"weather\":20.0,\"fahrenheit\":0.0},{\"id\":104,\"name\":\"Nyagatare\",\"weather\":28.0,\"fahrenheit\":0.0}]", response, true);
+        JSONAssert.assertEquals("[{\"id\":101,\"name\":\"Kigali\",\"weather\":24.0,\"fahrenheit\":56.0},{\"id\":102,\"name\":\"Musanze\",\"weather\":18.0,\"fahrenheit\":50.0},{\"id\":103,\"name\":\"Rubavu\",\"weather\":20.0,\"fahrenheit\":52.0},{\"id\":104,\"name\":\"Nyagatare\",\"weather\":28.0,\"fahrenheit\":60.0}]", response, true);
     }
 
     @Test
