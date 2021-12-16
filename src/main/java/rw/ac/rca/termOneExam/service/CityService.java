@@ -22,8 +22,13 @@ public class CityService {
 	}
 
 	public List<City> getAll() {
-		
-		return cityRepository.findAll();
+		List<City> cities = cityRepository.findAll();
+
+		for (City city : cities) {
+			city.setFahrenheit((city.getWeather()*(9/5))+32);
+		}
+
+		return cities;
 	}
 
 	public boolean existsByName(String name) {
